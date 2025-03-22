@@ -1,0 +1,174 @@
+/* Configuration de base */
+html{
+    font-family: "Source Code Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 10px;
+}
+
+body::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: url("./tbc.jpg"), #000;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    /* Assurer que l'image est derrière le contenu */
+}
+
+.container {
+    width: 415px;
+    border-radius: 9px;
+    padding: 32px;
+    text-align: center;
+    border: 2px solid rgb(188, 185, 185);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(9px);
+    position: relative;
+    /* Assure que la boîte reste en place sur l'image */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 19px;
+    color: white;
+}
+
+/* Styles pour les champs de texte et de mot de passe */
+.input-space {
+    position: relative;
+    border-bottom: 3px solid white;
+    margin: 14px 0;
+}
+
+.input-space input {
+    width: 100%;
+    height: 41px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: white;
+}
+
+.input-space label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.15s ease;
+}
+
+.input-space input:focus~label,
+.input-space input:valid~label {
+    font-size: 0.9rem;
+    top: 10px;
+    transform: translateY(-120%);
+}
+
+/* Style pour la section "Remember me" et "Forgot password" */
+.remember-forgot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 26px 0 36px 0;
+    color: white;
+}
+
+#remember {
+    accent-color: white;
+}
+
+.remember-forgot label p {
+    margin-left: 7px;
+}
+
+.remember-forgot label {
+    display: flex;
+    align-items: center;
+}
+
+.container a {
+    color: white;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+/* Bouton de connexion */
+button {
+    background: #100001;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    padding: 11px 19px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgb(32, 30, 30);
+}
+
+/* Style pour la section d'inscription */
+.register {
+    text-align: center;
+    margin-top: 29px;
+    color: #fff;
+}
+
+@media screen and (max-width:768px) {
+    header nav{
+        display: none;
+    }
+    main{
+        padding: 1rem;
+        gap: 10;
+    }
+    .container{
+        flex-direction: column;
+        min-height: 100%;
+        gap: 0.1rem;
+    }
+
+    .input-space{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+}
